@@ -1,0 +1,25 @@
+{
+	"name": "jquery-laravel-rest",
+	"version": "0.0.1",
+	"description": "Lightweight jQuery plugin for client-callbacks on Laravel REST routes. Find more details at <a href=\"https: //github.com/lmeysel/jquery-laravel-rest\">GitHub</a>",
+		"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lmeysel/jquery-laravel-rest.git"
+	},
+	"keywords": [
+		"jQuery",
+		"Laravel",
+		"REST",
+		"Ajax"
+	],
+	"author": "Ludwig Meysel",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/lmeysel/jquery-laravel-rest/issues"
+	},
+	"homepage": "https://github.com/lmeysel/jquery-laravel-rest#readme"
+}
