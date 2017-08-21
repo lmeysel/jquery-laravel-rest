@@ -3,7 +3,7 @@
 Lightweight jQuery plugin which allows you to communicate easily with your Laravel 5.4 server-side.
 
 ## Install
-Install the plugin via <code>npm install jquery-laravel-rest</code>. The you just need to only need to <code>require('jquery-laravel-rest');</code>.
+Install the plugin via <code>npm install jquery-laravel-rest</code>. Then you just to <code>require('jquery-laravel-rest');</code>.
 
 ## Examples
 
@@ -24,6 +24,6 @@ The following default-values can be specified:
 	<code>&lt;script&gt; $.rest('csrf_token', {{ csrf_token(); }}); &lt;/script&gt;</code>.<br/>
 	Alternatively you can configure the $.ajax with the csrf_token as X-CSRF-TOKEN as described <a href="https://laravel.com/docs/5.4/csrf#csrf-x-csrf-token">here</a>.
 * <code>before_request</code>: A callback function to call before each request. This callback takes no parameters and nothing is expected to be returned. It is not meant for preprocessing the data before request, but more for e.g. showing a loader.
-* <code>after_request</code>: As <code>before_request</code>, e.g. for hiden the loader.
+* <code>after_request</code>: As <code>before_request</code>, e.g. for hide the loader.
 
 Hope this helps someone ;)
