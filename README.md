@@ -3,7 +3,7 @@
 Lightweight jQuery plugin which allows you to communicate easily with your Laravel 5.4 server-side.
 
 ## Install
-Install the plugin via <code>npm install jquery-laravel-rest</code>. Then you just to <code>require('jquery-laravel-rest');</code>.
+Install the plugin via <code>npm install jquery-laravel-rest</code>. Then you just need to <code>require('jquery-laravel-rest');</code>.
 
 ## Examples
 
