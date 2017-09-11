@@ -8,9 +8,9 @@ Install the plugin via <code>npm install jquery-laravel-rest</code>. Then you ju
 ## Examples
 
 ### Update a dataset via <code>update</code>-route on controller <code>my-module</code>:
-<code>$.rest('update', my_data_object, '~/my-module/')</code>
+<code>$.rest('update', my_data_object, success: (data) => void)</code>
 
-Consider there is no id specified explicitly - it will automatically be attached to the route. The plugin expects you to have the id specified in <code>my_data_object</code>. The ID member can be specified as default value as we'll see later.
+Consider there is no id specified explicitly - it will automatically be attached to the route. The plugin expects you to have the id specified in <code>my_data_object</code>. The ID member can be specified as default value as we'll see later. Furthermore there is the base route required, i.e. when accessing a Laravel ResourceController for Users, then the url could be '~/users', for instance. The deeper parts (e.g. '/edit') will be added by the plugin.
 
 The available REST-routes are: <code>index</code>, <code>create</code>, <code>store</code>, <code>show</code>, <code>edit</code>, <code>update</code> and <code>destroy</code>. The request URLs are set up as decribed in the <a href="https://laravel.com/docs/5.4/controllers#resource-controllers">Laravel-Docs (table)</a>.
 
