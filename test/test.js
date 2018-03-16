@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import '../src/index.js';
+import Rest from '../dist/index.js';
 
-if ($.rest) {
+if (Rest) {
 	$('#test').text('Test successful.');
 } else {
 	$('#test').text('Test failed.');

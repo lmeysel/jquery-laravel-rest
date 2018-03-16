@@ -9,7 +9,7 @@ import jQuery from 'jquery';
  * @copyright 2017 Ludwig Meysel
  * @license MIT
  */
-jQuery.rest = (function ($) {
+const rest = (function ($) {
 	var fixed = {
 	};
 	var defaults = {
@@ -186,3 +186,6 @@ jQuery.rest = (function ($) {
 		rest[c](arguments[1], a, cb);
 	};
 })(jQuery);
+
+jQuery.rest = rest;
+export default rest;

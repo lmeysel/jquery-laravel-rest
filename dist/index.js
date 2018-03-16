@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _jquery = require('jquery');
@@ -17,7 +21,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @copyright 2017 Ludwig Meysel
  * @license MIT
  */
-_jquery2.default.rest = function ($) {
+var rest = function ($) {
 	var fixed = {};
 	var defaults = {
 		url: '/',
@@ -173,5 +177,8 @@ _jquery2.default.rest = function ($) {
 		rest[c](arguments[1], a, cb);
 	};
 }(_jquery2.default);
+
+_jquery2.default.rest = rest;
+exports.default = rest;
 
 //# sourceMappingURL=index.js.map
