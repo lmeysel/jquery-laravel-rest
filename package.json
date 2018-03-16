@@ -1,25 +1,16 @@
 {
 	"name": "jquery-laravel-rest",
-	"version": "0.0.9",
-	"description": "Lightweight jQuery plugin for client-callbacks on Laravel REST routes. Find more details at <a href=\"https: //github.com/lmeysel/jquery-laravel-rest\">GitHub</a>",
+	"version": "0.0.10",
+	"description": "Lightweight jQuery plugin which allows you to communicate easily with your Laravel 5.4 server-side.",
 	"main": "dist/index.js",
 	"typings": "src/index.d.ts",
-	"scripts": {
-		"watch": "concurrently --kill-others \"npm run build:dev -- -w\" \"cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
-		"build": "rm -rf dist/* && npm run build:dev && npm run build:min",
-		"build:dev": "babel src -o dist/index.js --source-maps",
-		"build:min": "babel src -o dist/index.min.js --source-maps --minified"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/lmeysel/jquery-laravel-rest.git"
-	},
-	"keywords": [
-		"jQuery",
-		"Laravel",
-		"REST",
-		"Ajax"
+	"files": [
+		"src",
+		"dist/*.js"
 	],
+	"dependencies": {
+		"jquery": "^3.3.1"
+	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
 		"babel-preset-env": "^1.6.1",
@@ -27,23 +18,18 @@
 		"browser-sync-webpack-plugin": "^2.0.1",
 		"laravel-mix": "^2.1.2"
 	},
-	"dependencies": {
-		"jquery": "^3.3.1"
+	"scripts": {
+		"watch": "concurrently --kill-others \"npm run build:dev -- -w\" \"cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"",
+		"build": "rm -rf dist/* && npm run build:dev && npm run build:min",
+		"build:dev": "babel src -o dist/index.js --source-maps",
+		"build:min": "babel src -o dist/index.min.js --source-maps --minified"
 	},
 	"babel": {
-		"presets": [
-			[
-				"env",
-				{
-					"targets": {
-						"browsers": [
-							"last 2 versions",
-							"safari >= 7"
-						]
-					}
-				}
-			]
-		]
+		"presets": "env"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lmeysel/jquery-laravel-rest.git"
 	},
 	"author": "Ludwig Meysel",
 	"license": "MIT",
