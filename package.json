@@ -31,7 +31,19 @@
 		"jquery": "^3.3.1"
 	},
 	"babel": {
-		"presets": "env"
+		"presets": [
+			[
+				"env",
+				{
+					"targets": {
+						"browsers": [
+							"last 2 versions",
+							"safari >= 7"
+						]
+					}
+				}
+			]
+		]
 	},
 	"author": "Ludwig Meysel",
 	"license": "MIT",

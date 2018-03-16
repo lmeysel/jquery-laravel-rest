@@ -9,8 +9,13 @@
 			"request": "attach",
 			"name": "Attach to Chrome",
 			"port": 9222,
-			"webRoot": "${workspaceFolder}",
-			"sourceMaps": true
+			"webRoot": "${workspaceRoot}",
+			"disableNetworkCache": true,
+			"sourceMaps": true,
+			"url": "http://localhost:3000",
+			"skipFiles": [
+				"node_modules"
+			]
 		}
 	]
 }

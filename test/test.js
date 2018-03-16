@@ -1,7 +1,8 @@
 import $ from 'jquery';
-import Rest from '../dist/index.js';
+import '../dist/index.js';
 
-if (Rest) {
+console.log($.rest);
+if (typeof ($.rest) == 'function') {
 	$('#test').text('Test successful.');
 } else {
 	$('#test').text('Test failed.');
