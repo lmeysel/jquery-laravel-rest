@@ -1,6 +1,6 @@
 {
 	"name": "jquery-laravel-rest",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Lightweight jQuery plugin for client-callbacks on Laravel REST routes. Find more details at <a href=\"https: //github.com/lmeysel/jquery-laravel-rest\">GitHub</a>",
 	"main": "dist/index.js",
 	"typings": "src/index.d.ts",
