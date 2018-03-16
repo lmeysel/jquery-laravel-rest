@@ -1,26 +1,40 @@
 {
-  "name": "jquery-laravel-rest",
-  "version": "0.0.3",
-  "description": "Lightweight jQuery plugin for client-callbacks on Laravel REST routes. Find more details at <a href=\"https: //github.com/lmeysel/jquery-laravel-rest\">GitHub</a>",
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lmeysel/jquery-laravel-rest.git"
-  },
-  "keywords": [
-    "jQuery",
-    "Laravel",
-    "REST",
-    "Ajax"
-  ],
-  "author": "Ludwig Meysel",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lmeysel/jquery-laravel-rest/issues"
-  },
-  "homepage": "https://github.com/lmeysel/jquery-laravel-rest#readme"
+	"name": "jquery-laravel-rest",
+	"version": "0.0.3",
+	"description": "Lightweight jQuery plugin for client-callbacks on Laravel REST routes. Find more details at <a href=\"https: //github.com/lmeysel/jquery-laravel-rest\">GitHub</a>",
+	"main": "dist/index.js",
+	"typings": "src/index.d.ts",
+	"scripts": {
+		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"build": "rm -rf dist/* && npm run build:dev && npm run build:min",
+		"build:dev": "babel src --out-dir=dist --source-maps",
+		"build:min": "babel src --out-dir=dist --source-maps --minified"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lmeysel/jquery-laravel-rest.git"
+	},
+	"keywords": [
+		"jQuery",
+		"Laravel",
+		"REST",
+		"Ajax"
+	],
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"browser-sync": "^2.23.6",
+		"browser-sync-webpack-plugin": "^2.0.1",
+		"jquery": "^3.3.1",
+		"laravel-mix": "^2.1.2"
+	},
+	"babel": {
+		"presets": "env"
+	},
+	"author": "Ludwig Meysel",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/lmeysel/jquery-laravel-rest/issues"
+	},
+	"homepage": "https://github.com/lmeysel/jquery-laravel-rest#readme"
 }

@@ -1,3 +1,5 @@
+import jQuery from 'jquery';
+
 /**
  * Simple client-side API for fast RESTful implementation for lavarel 5.4 backend.
  * Call:
@@ -7,7 +9,7 @@
  * @copyright 2017 Ludwig Meysel
  * @license MIT
  */
-jQuery.rest = (function($) {
+jQuery.rest = (function ($) {
 	var fixed = {
 	};
 	var defaults = {
@@ -19,12 +21,12 @@ jQuery.rest = (function($) {
 	};
 
 	function r_bfr() {
-		if (typeof(defaults.beforeRequest) == 'function')
+		if (typeof (defaults.beforeRequest) == 'function')
 			defaults.beforeRequest();
 	}
 
 	function r_aftr(obj, def, message) {
-		if (typeof(defaults.afterRequest) == 'function')
+		if (typeof (defaults.afterRequest) == 'function')
 			defaults.afterRequest();
 	}
 
@@ -40,7 +42,7 @@ jQuery.rest = (function($) {
 		var text = $('<a>').appendTo(cont)
 			.css({ 'color': 'red', 'font-size': '2em', 'cursor': 'pointer', position: 'absolute', 'right': '10px', 'top': '10px' })
 			.html('<i class="fa fa-times"></i>&nbsp;<strong>Close</strong>')
-			.click(function() { cont.remove(); });
+			.click(function () { cont.remove(); });
 		var iframe = $('<iframe>').appendTo(cont)
 			.css({
 				'position': 'absolute',
@@ -61,117 +63,117 @@ jQuery.rest = (function($) {
 		 * @param [a] additional arguments
 		 * @param [c] success-callback
 		 */
-		create: function(d, a, c) {
+		create: function (d, a, c) {
 			r_bfr();
 			$.ajax({
-					method: 'GET',
-					url: a.url + '/create',
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'GET',
+				url: a.url + '/create',
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		},
 		/**
 		 * Index: (GET ~/)
 		 */
-		index: function(d, a, c) {
+		index: function (d, a, c) {
 			$.ajax({
-					method: 'GET',
-					url: a.url,
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'GET',
+				url: a.url,
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		},
 		/**
 		 * Store (POST ~/)
 		 */
-		store: function(d, a, c) {
+		store: function (d, a, c) {
 			d['_method'] = 'POST';
 			$.ajax({
-					method: 'POST',
-					url: a.url,
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'POST',
+				url: a.url,
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		},
 		/**
 		 * Show (GET ~/{id}, where {id} will be replaced with the value specified in <i>d</i>'s <i>idField</i>)
 		 */
-		show: function(d, a, c) {
+		show: function (d, a, c) {
 			$.ajax({
-					method: 'GET',
-					url: a.url + '/' + d[defaults['idField']],
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'GET',
+				url: a.url + '/' + d[defaults['idField']],
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		},
 		/**
 		 * Edit (GET ~/{id}/edit)
 		 */
-		edit: function(d, a, c) {
+		edit: function (d, a, c) {
 			$.ajax({
-					method: 'GET',
-					url: a.url + '/' + d[defaults['idField']] + '/edit',
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'GET',
+				url: a.url + '/' + d[defaults['idField']] + '/edit',
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		},
 		/**
 		 * Update (PUT ~/{id})
 		 */
-		update: function(d, a, c) {
+		update: function (d, a, c) {
 			d['_method'] = 'PUT';
 			$.ajax({
-					method: 'POST',
-					url: a.url + '/' + d[defaults['idField']],
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'POST',
+				url: a.url + '/' + d[defaults['idField']],
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		},
 		/**
 		 * Delete (DELETE ~/{id})
 		 */
-		destroy: function(d, a, c) {
+		destroy: function (d, a, c) {
 			d['_method'] = 'DELETE';
 			$.ajax({
-					method: 'POST',
-					url: a.url + '/' + d[defaults['idField']],
-					data: d,
-					success: c,
-					error: e
-				})
+				method: 'POST',
+				url: a.url + '/' + d[defaults['idField']],
+				data: d,
+				success: c,
+				error: e
+			})
 				.always(r_aftr);
 		}
 	}
 
-	return function() {
+	return function () {
 		var c = arguments[0];
 		if (c == 'default') {
 			$.extend(defaults, arguments[1]);
 			return;
 		}
-		if (typeof(rest[c]) != 'function')
+		if (typeof (rest[c]) != 'function')
 			throw new Error('Invalid REST command "' + c + '".');
 
-		if (arguments.length > 1 && typeof(arguments[1]) != 'object')
+		if (arguments.length > 1 && typeof (arguments[1]) != 'object')
 			throw new Error('Invalid argument. Object expected');
 
 		var a = false,
 			cb = false;
 		for (var i = 1; i < 3; i++)
 			if (arguments[i]) {
-				if (typeof(arguments[i]) == 'function')
+				if (typeof (arguments[i]) == 'function')
 					cb = arguments[i]
 				else
 					a = p(arguments[i]);
