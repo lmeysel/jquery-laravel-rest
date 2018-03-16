@@ -173,4 +173,5 @@ _jquery2.default.rest = function ($) {
 		rest[c](arguments[1], a, cb);
 	};
 }(_jquery2.default);
+
 //# sourceMappingURL=index.js.map
